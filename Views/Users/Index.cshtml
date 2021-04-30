@@ -1,0 +1,37 @@
+@model IEnumerable<UsersAPI.Models.User>
+
+@{
+  ViewData["Title"] = "List Users";
+}
+
+<div>
+  <h1 class="display-4">@ViewData["Title"]</h1>
+
+  <p>
+      <a asp-action="Create" class="btn btn-sm btn-success">Create New</a>
+  </p>
+
+  <table class="table table-striped table-bordered">
+    <tr>
+      <th>@Html.DisplayNameFor(model => model.id)</th>
+      <th>@Html.DisplayNameFor(model => model.userId)</th>
+      <th>@Html.DisplayNameFor(model => model.title)</th>
+      <th>@Html.DisplayNameFor(model => model.completed)</th>
+      <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+      <tr>
+        <td>@item.id</td>
+        <td>@item.userId</td>
+        <td>@item.title</td>
+        <td>@item.completed</td>
+        <td style="text-align: center;">
+          <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-sm btn-warning">Edit</a>
+          <a asp-action="Details" asp-route-id="@item.id" class="btn btn-sm btn-info">Details</a>
+          <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-sm btn-danger">Delete</a>
+        </td>
+      </tr>
+      }
+  </table>
+</div>

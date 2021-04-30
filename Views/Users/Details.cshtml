@@ -1,0 +1,43 @@
+@model UsersAPI.Models.User
+
+@{
+  ViewData["Title"] = "User Details";
+}
+
+<h1>@ViewData["Title"]</h1>
+<div>
+  <hr />
+  <dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.id)
+    </dt>
+    <dd class="col-sm-10">
+      @Html.DisplayFor(model => model.id)
+    </dd>
+
+    <dt class="col-sm-2">
+      @Html.DisplayNameFor(model => model.userId)
+    </dt>
+    <dd class="col-sm-10">
+      @Html.DisplayFor(model => model.userId)
+    </dd>
+
+    <dt class="col-sm-2">
+      @Html.DisplayNameFor(model => model.title)
+    </dt>
+    <dd class="col-sm-10">
+      @Html.DisplayFor(model => model.title)
+    </dd>
+
+    <dt class="col-sm-2">
+          @Html.DisplayNameFor(model => model.completed)
+    </dt>
+    <dd class="col-sm-10">
+      @Html.DisplayFor(model => model.completed)
+    </dd>
+  </dl>
+</div>
+<div>
+  <a asp-action="Edit" asp-route-id="@Model.id" class="btn btn-warning">Edit</a> 
+  <a asp-action="Index" class="btn btn-primary">&lt;&lt; Back to List</a>
+</div>
